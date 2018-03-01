@@ -11,6 +11,8 @@ RUN        apk add --no-cache bash curl openjdk8 && \
            mv ${NIFI_REGISTRY_HOME}/nifi-registry-${VERSION}/* ${NIFI_REGISTRY_HOME} && \
            rm -rf ${NIFI_HOME}/nifi-registry-${VERSION} && \
            rm -rf *.tar.gz
+COPY       start_nifi_registry.sh /${NIFI_REGISTRY_HOME}/
 EXPOSE     8080 8443
 WORKDIR    ${NIFI_REGISTRY_HOME}
-CMD        ./bin/nifi.sh run
+RUN        chmod +x ./start_nifi_registry.sh
+CMD        ./start_nifi_registry.sh
