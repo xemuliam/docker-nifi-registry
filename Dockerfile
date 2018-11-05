@@ -1,7 +1,7 @@
 FROM       alpine
 MAINTAINER Viacheslav Kalashnikov <xemuliam@gmail.com>
 ARG        DIST_MIRROR=http://archive.apache.org/dist/nifi/nifi-registry
-ARG        VERSION=0.2.0
+ARG        VERSION=0.3.0
 ENV        NIFI_REGISTRY_HOME=/opt/nifi-registry \
            JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk \
            PATH=$PATH:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
